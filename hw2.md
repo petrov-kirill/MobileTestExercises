@@ -14,13 +14,13 @@
     Are there any difference with run on emulator?
 
     To run tests on physical device we need to:
-    1. plug in our device to computer via usb port.
-    2. run command "adb devices" in command prompt, and make sure that our device is in the attached devices list.
-    3. open appium application and start the server.
-    4. in "Desired Capabilities" fill in fields: "deviceName", "platformName", "app" with required values;
-    5. start session and run tests.
+    a. plug in our device to computer via usb port.
+    b. run command "adb devices" in command prompt, and make sure that our device is in the attached devices list.
+    c. open appium application and start the server.
+    d. in "Desired Capabilities" fill in fields: "deviceName", "platformName", "app" with required values;
+    e. start session and run tests.
 
-4.  4.	What should be improved/changed in existing test code? Why, for what?
+4.  What should be improved/changed in existing test code? Why, for what?
 
     First of all rename tests and give them meaningful names that will describe their behaviour.
     Then get rid of System.out.println(), it's not a good practice.
