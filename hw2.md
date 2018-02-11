@@ -23,7 +23,7 @@
 4.  What should be improved/changed in existing test code? Why, for what?
 
     First of all rename tests and give them meaningful names that will describe their behaviour.
-    Then get rid of System.out.println(), it's not a good practice.
+    Then get rid of System.out.println() + Thread.sleep() it's not a good practice.
     Of course we need to add assertions to our tests.
     Change the way we look for our locators to @FindBy.
     Get rid of hard coded values. Make property file for capabilities.
