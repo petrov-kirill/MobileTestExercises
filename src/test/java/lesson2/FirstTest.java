@@ -1,6 +1,6 @@
-package scenarios;
+package lesson2;
 
-import org.openqa.selenium.By;
+import lesson2.scenarios.DriverSetup;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -22,11 +22,13 @@ public class FirstTest extends DriverSetup {
 
     @Test
     public void SimpleEmulatorAppTest() {
-//        String appPackageName = "com.example.android.contactmanager:id/";
+        String appPackageName = "com.example.android.contactmanager:id/";
 //        By addBtn = By.id(appPackageName + "addContactButton");
-        By addBtn = By.xpath("//android.widget.Button[@content-desc=\"Add Contact\"]");
+//        By addBtn = By.xpath("//android.widget.Button[@content-desc=\"Add Contact\"]");
 //        By addBtn = By.className("android.widget.Button");
-        driver.findElement(addBtn).click();
+//        driver.findElement(addBtn).click();
+//        driver.findElementById("com.example.android.contactmanager:id/addContactButton").click();
+        driver.findElementByClassName("android.widget.Button");
         System.out.println("Simple test is over");
     }
 
