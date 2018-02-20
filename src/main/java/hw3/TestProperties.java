@@ -14,7 +14,7 @@ public class TestProperties {
 
     private Properties currentProps = new Properties();
 
-    protected String getProp(String key) throws IOException {
+    protected String getProp(String key) {
         if (!currentProps.containsKey(key)) {
             currentProps = getCurrentProps(PropsEnum.NATIVE_PROPERTY_PATH.text);
         }
@@ -24,7 +24,7 @@ public class TestProperties {
         return currentProps.getProperty(key, null);
     }
 
-    private Properties getCurrentProps(String property) throws IOException {
+    private Properties getCurrentProps(String property){
         try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + property)) {
             currentProps.load(fis);
         } catch (Exception e) {
