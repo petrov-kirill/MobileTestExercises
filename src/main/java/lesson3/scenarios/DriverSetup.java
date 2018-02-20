@@ -21,10 +21,10 @@ public class DriverSetup extends Props {
     private String browserName;
 
     public DriverSetup() throws IOException {
-        aut = getProp("aut");
-//        String tSut = getProp("sut");
-//        sut = tSut == null ? null : "http://" + tSut;
-//        sut = getProp("sut");
+//        aut = getProp("aut");
+        String tSut = getProp("sut");
+        sut = tSut == null ? null : "http://" + tSut;
+        sut = getProp("sut");
         testPlatform = getProp("platform");
         driver = getProp("driver");
     }
@@ -54,7 +54,6 @@ public class DriverSetup extends Props {
     }
 
     private void prepareType() throws Exception {
-        // setting application or site capabilities
         if (aut != null && sut == null) {
             File application = new File(aut);
             capabilities.setCapability(MobileCapabilityType.APP, application);

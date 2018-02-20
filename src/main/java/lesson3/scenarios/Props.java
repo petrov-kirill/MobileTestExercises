@@ -6,36 +6,29 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Props {
-    Properties properties = new Properties();
 
+    private static final String WEB_PROPERTY_PATH = "\\src\\main\\resources\\web.properties";
+    private static final String NATIVE_PROPERTY_PATH = "\\src\\main\\resources\\native.properties";
+
+    private Properties properties = new Properties();
+
+    private Properties getAnyProperties(String testPropertyPath) {
+        File f = new File(testPropertyPath);
+        try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + f)) {
+            properties.load(fis);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return properties;
+    }
 
     String getProp(String key) throws IOException {
         if (!properties.containsKey(key)) {
-            properties = getNativeProperties();
+            properties = getAnyProperties(WEB_PROPERTY_PATH);
         }
         if (!properties.containsKey(key)) {
-            properties = getWebProperties();
+            properties = getAnyProperties(NATIVE_PROPERTY_PATH);
         }
         return properties.getProperty(key, null);
-    }
-
-    private Properties getWebProperties() {
-        File f = new File("\\src\\main\\resources\\web.properties");
-        try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + f)) {
-            properties.load(fis);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return properties;
-    }
-
-    private Properties getNativeProperties() {
-        File f = new File("\\src\\main\\resources\\native.properties");
-        try (FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + f)) {
-            properties.load(fis);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return properties;
     }
 }
