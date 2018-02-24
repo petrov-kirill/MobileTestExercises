@@ -1,12 +1,10 @@
-package hw3;
+package hw3_depricated;
 
 import enums.driver.PropsEnum;
 
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.Properties;
 
-import static common.Paths.NATIVE_PROPERTY_PATH;
 import static enums.driver.PropsEnum.WEB_PROPERTY_PATH;
 import static java.lang.System.getProperty;
 

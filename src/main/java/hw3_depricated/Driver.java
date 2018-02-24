@@ -1,4 +1,4 @@
-package hw3;
+package hw3_depricated;
 
 import enums.driver.CapabilitiesEnum;
 import io.appium.java_client.AppiumDriver;
@@ -7,7 +7,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 
 import static enums.driver.CapabilitiesEnum.*;
@@ -31,13 +30,13 @@ public class Driver extends TestProperties {
     protected static String ACTIVITY;
     private String browserName;
 
-    protected Driver() throws IOException {
+    protected Driver() {
         AUT = getProp(APPLICATION_UNDER_TEST.text);
         String t_sut = getProp(SITE_UNDER_TEST.text);
         SUT = t_sut == null ? null : URL_HTTP_PREFIX.text + t_sut;
-        TEST_PLATFORM = getProp("platform");
-        DRIVER = getProp("driver");
-        DEVICE_NAME = getProp(CapabilitiesEnum.DEVICE_NAME.text);
+        TEST_PLATFORM = getProp(PLATFORM_NAME.text);
+        DRIVER = getProp(CapabilitiesEnum.DRIVER.text);
+        DEVICE_NAME = getProp(CapabilitiesEnum.EMLATOR_NAME.text);
         PACKAGE = getProp(APP_PACKAGE.text);
         ACTIVITY = getProp(APP_ACTIVITY.text);
     }
@@ -52,7 +51,7 @@ public class Driver extends TestProperties {
         return driver;
     }
 
-    protected WebDriverWait driverWait() throws Exception {
+    protected WebDriverWait driverWait() {
         return wait;
     }
 

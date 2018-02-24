@@ -1,6 +1,6 @@
-package hw3.scenarios.hooks;
+package hw3_depricated.scenarios.hooks;
 
-import hw3.Driver;
+import hw3_depricated.Driver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;

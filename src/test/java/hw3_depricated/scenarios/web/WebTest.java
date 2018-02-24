@@ -1,7 +1,7 @@
-package hw3.scenarios.web;
+package hw3_depricated.scenarios.web;
 
-import hw3.Driver;
-import hw3.webpages.IanaHomePage;
+import hw3_depricated.Driver;
+import hw3_depricated.webpages.IanaHomePage;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.annotations.BeforeClass;

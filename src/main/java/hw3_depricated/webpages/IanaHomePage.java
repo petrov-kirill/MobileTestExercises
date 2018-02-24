@@ -1,4 +1,4 @@
-package hw3.webpages;
+package hw3_depricated.webpages;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.WebElement;

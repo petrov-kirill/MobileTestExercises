@@ -1,10 +1,9 @@
 package enums.driver;
 
 public enum CommonEnum {
-    HOST("host"),
     URL_HTTP_PREFIX("http://"),
     UNCLEAR_TYPE_OF_APP("Unclear type of mobile app"),
-    UNKNOWN_PLATFORM_MESSAGE("Unknown platform");
+    UNKNOWN_PLATFORM_MESSAGE("Unknown mobile platform");
 
     public final String text;
 

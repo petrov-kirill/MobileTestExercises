@@ -1,6 +1,6 @@
-package hw3.scenarios.app;
+package hw3_depricated.scenarios.app;
 
-import hw3.Driver;
+import hw3_depricated.Driver;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
